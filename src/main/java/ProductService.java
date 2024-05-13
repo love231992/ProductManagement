@@ -3,14 +3,17 @@ import java.util.List;
 
 public class ProductService {
 
+    ProductDB db = new ProductDB();
+
     List<Product> products = new ArrayList<>();
 // Logic to add product to the List
     public void addProduct(Product p){
-        products.add(p);
+//        products.add(p);
+        db.save(p);
     }
 // Logic to get all the product from the list
     public List<Product> getProducts() {
-        return products;
+        return db.getAll();
     }
     // Logic to get product by name from the list
   public Product getProduct(String arg){
